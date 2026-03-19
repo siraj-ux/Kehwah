@@ -86,7 +86,7 @@ export function ProductHero() {
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
                   className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImage === idx ? "border-[#1B3B36]" : "border-transparent hover:border-gray-200"
+                    selectedImage === idx ? "border-[#c41e1e]" : "border-transparent hover:border-gray-200"
                   }`}
                 >
                   <Image src={img} alt={`View ${idx + 1}`} width={100} height={100} className="w-full h-full object-cover" />
@@ -97,7 +97,7 @@ export function ProductHero() {
 
           {/* RIGHT COLUMN: Details */}
           <div className="flex flex-col w-full">
-            {/* 🔥 NEW URGENCY BANNER */}
+            {/* 🔥 URGENCY BANNER */}
             <div className="mb-4 inline-flex items-center gap-2 bg-[#FEF2F2] border border-[#FECACA] px-4 py-2 rounded-lg w-full md:w-fit animate-pulse shadow-sm">
                 <Flame className="w-4 h-4 text-red-600 fill-red-600" />
                 <span className="text-red-700 font-bold text-xs md:text-sm uppercase tracking-wider">
@@ -110,7 +110,8 @@ export function ProductHero() {
                 <p className="text-[#E87722] font-bold tracking-wide text-sm uppercase flex items-center gap-2">
                    <Zap className="w-4 h-4 fill-[#E87722]" /> Feel the Calm of Kashmir in Every Sip 🌿
                 </p>
-                <h1 className="font-serif text-2xl md:text-4xl font-bold text-[#1B3B36] leading-tight">
+                {/* HEADLINE SET TO BLACK */}
+                <h1 className="font-serif text-2xl md:text-4xl font-bold text-black leading-tight">
                   Kesar Kehwah – Organic Herbal Tea
                 </h1>
                 <p className="text-gray-600 text-base md:text-lg leading-relaxed">
@@ -129,7 +130,7 @@ export function ProductHero() {
                 <span className="text-[#E87722] font-bold text-sm">4.5 Rating</span>
               </div>
               <span className="text-gray-400 text-sm">| 29 reviews</span>
-              <span className="text-[#1B3B36] text-xs font-semibold bg-green-50 px-2 py-1 rounded-full border border-green-100">
+              <span className="text-red-700 text-xs font-semibold bg-red-50 px-2 py-1 rounded-full border border-red-100">
                  🔥 700+ bought this week
               </span>
             </div>
@@ -137,28 +138,28 @@ export function ProductHero() {
             {/* Price Display */}
             <div className="flex items-center gap-3 mt-6">
               <span className="text-gray-400 line-through text-lg">₹ {currentVariant.originalPrice}</span>
-              <span className="text-3xl font-bold text-[#1B3B36]">₹ {currentVariant.price}</span>
+              <span className="text-3xl font-bold text-[#c41e1e]">₹ {currentVariant.price}</span>
               <span className="bg-[#E87722] text-white text-xs px-2 py-1 rounded font-bold">SALE</span>
             </div>
 
             {/* Trust Bullet Points */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 mt-6 py-4 border-y border-gray-100">
-                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-green-600 stroke-[3]" /> Made with Grade-1 Kashmiri Kesar</div>
-                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-green-600 stroke-[3]" /> No Sugar | No Preservatives</div>
-                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-green-600 stroke-[3]" /> Ready in 60 seconds</div>
-                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-green-600 stroke-[3]" /> Trusted by 10,000+ customers</div>
+                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-[#E87722] stroke-[3]" /> Made with Grade-1 Kashmiri Kesar</div>
+                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-[#E87722] stroke-[3]" /> No Sugar | No Preservatives</div>
+                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-[#E87722] stroke-[3]" /> Ready in 60 seconds</div>
+                <div className="flex items-center gap-2 text-sm text-gray-700 font-medium"><Check className="w-4 h-4 text-[#E87722] stroke-[3]" /> Trusted by 10,000+ customers</div>
             </div>
 
             {/* Pack Selection */}
             <div className="mt-6">
-              <p className="text-sm font-bold text-[#1B3B36] mb-3">Select Pack Size:</p>
+              <p className="text-sm font-bold text-[#c41e1e] mb-3">Select Pack Size:</p>
               <RadioGroup value={selectedPack} onValueChange={setSelectedPack} className="flex flex-wrap gap-2">
                 {variants.map((variant, i) => (
                   <div key={i}>
                     <RadioGroupItem value={variant.label} id={`p-${i}`} className="peer sr-only" />
                     <Label 
                       htmlFor={`p-${i}`} 
-                      className="flex items-center justify-center px-4 py-3 border-2 border-gray-100 rounded-lg cursor-pointer peer-data-[state=checked]:bg-[#1B3B36] peer-data-[state=checked]:border-[#1B3B36] peer-data-[state=checked]:text-white text-gray-600 text-sm font-medium transition-all hover:border-gray-300"
+                      className="flex items-center justify-center px-4 py-3 border-2 border-gray-100 rounded-lg cursor-pointer peer-data-[state=checked]:bg-[#c41e1e] peer-data-[state=checked]:border-[#c41e1e] peer-data-[state=checked]:text-white text-gray-600 text-sm font-medium transition-all hover:border-gray-300"
                     >
                       {variant.label}
                     </Label>
@@ -181,7 +182,7 @@ export function ProductHero() {
                     disabled={isAdding}
                     className={cn(
                     "flex-1 h-12 text-sm font-bold rounded-lg uppercase tracking-wider transition-all duration-300",
-                    isAdding ? "bg-green-600 hover:bg-green-600" : "bg-[#1B3B36] hover:bg-[#152e2a]"
+                    isAdding ? "bg-green-600 hover:bg-green-600" : "bg-[#c41e1e] hover:bg-[#a31818]"
                     )}
                 >
                     {isAdding ? (<span className="flex items-center gap-2"><Check className="w-4 h-4" /> ADDED!</span>) : "Add to Cart"}
@@ -198,19 +199,19 @@ export function ProductHero() {
 
             {/* Trust Badges */}
             <div className="flex items-center justify-center gap-6 mt-6 py-3 bg-gray-50 rounded-lg">
-                <div className="flex flex-col items-center gap-1"><Truck className="w-5 h-5 text-[#1B3B36]" /><span className="text-[10px] font-bold uppercase text-gray-500">Free Shipping</span></div>
-                <div className="flex flex-col items-center gap-1"><Wallet className="w-5 h-5 text-[#1B3B36]" /><span className="text-[10px] font-bold uppercase text-gray-500">COD Available</span></div>
-                <div className="flex flex-col items-center gap-1"><ShieldCheck className="w-5 h-5 text-[#1B3B36]" /><span className="text-[10px] font-bold uppercase text-gray-500">Secure Payment</span></div>
+                <div className="flex flex-col items-center gap-1"><Truck className="w-5 h-5 text-[#c41e1e]" /><span className="text-[10px] font-bold uppercase text-gray-500">Free Shipping</span></div>
+                <div className="flex flex-col items-center gap-1"><Wallet className="w-5 h-5 text-[#c41e1e]" /><span className="text-[10px] font-bold uppercase text-gray-500">COD Available</span></div>
+                <div className="flex flex-col items-center gap-1"><ShieldCheck className="w-5 h-5 text-[#c41e1e]" /><span className="text-[10px] font-bold uppercase text-gray-500">Secure Payment</span></div>
             </div>
 
             {/* Subscription Box */}
             <div className="mt-6 border-2 border-gray-100 rounded-xl overflow-hidden">
-              <label className={`flex items-center gap-3 p-4 cursor-pointer transition-colors ${purchaseType === 'one-time' ? 'bg-[#F2F1ED]' : 'bg-white hover:bg-gray-50'}`}>
-                <input type="radio" name="type" checked={purchaseType === 'one-time'} onChange={() => setPurchaseType('one-time')} className="w-4 h-4 accent-[#1B3B36]" />
+              <label className={`flex items-center gap-3 p-4 cursor-pointer transition-colors ${purchaseType === 'one-time' ? 'bg-red-50/50' : 'bg-white hover:bg-gray-50'}`}>
+                <input type="radio" name="type" checked={purchaseType === 'one-time'} onChange={() => setPurchaseType('one-time')} className="w-4 h-4 accent-[#c41e1e]" />
                 <span className="text-sm font-semibold text-gray-700">One-time purchase</span>
               </label>
-              <label className={`flex items-start gap-3 p-4 border-t-2 border-gray-100 cursor-pointer transition-colors ${purchaseType === 'subscribe' ? 'bg-[#F2F1ED]' : 'bg-white hover:bg-gray-50'}`}>
-                <input type="radio" name="type" checked={purchaseType === 'subscribe'} onChange={() => setPurchaseType('subscribe')} className="w-4 h-4 accent-[#1B3B36] mt-1" />
+              <label className={`flex items-start gap-3 p-4 border-t-2 border-gray-100 cursor-pointer transition-colors ${purchaseType === 'subscribe' ? 'bg-red-50/50' : 'bg-white hover:bg-gray-50'}`}>
+                <input type="radio" name="type" checked={purchaseType === 'subscribe'} onChange={() => setPurchaseType('subscribe')} className="w-4 h-4 accent-[#c41e1e] mt-1" />
                 <div>
                   <span className="text-sm text-gray-700 font-bold">Subscribe & Save 10%</span>
                   <p className="text-xs text-gray-500 mt-0.5">Delivered every 3 months. Skip or cancel anytime.</p>

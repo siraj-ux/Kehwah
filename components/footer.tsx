@@ -12,23 +12,24 @@ const float = {
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#1B3B36] text-white py-12 md:py-16 overflow-hidden border-t border-white/5">
+    // Background updated to the Deep Burgundy from your image: #2D0B10
+    <footer className="relative bg-[#2D0B10] text-white py-12 md:py-16 overflow-hidden border-t border-white/5">
       
       {/* --- DECORATIVE BRANDING IMAGES (Watermarks) --- */}
       
-      {/* Left Motif (1-21) */}
+      {/* Left Motif */}
       <motion.div 
         {...float}
-        className="absolute top-0 -left-6 opacity-10 pointer-events-none"
+        className="absolute top-0 -left-6 opacity-[0.08] md:opacity-[0.12] pointer-events-none brightness-0 invert"
       >
         <Image src="/images/brand-deck/1-21.png" alt="" width={150} height={150} className="w-24 md:w-32" />
       </motion.div>
 
-      {/* Right Motif (1-20) */}
+      {/* Right Motif */}
       <motion.div 
         {...float}
         transition={{ ...float.transition, delay: 1 }}
-        className="absolute top-4 -right-6 opacity-10 pointer-events-none"
+        className="absolute top-4 -right-6 opacity-[0.08] md:opacity-[0.12] pointer-events-none brightness-0 invert"
       >
         <Image src="/images/brand-deck/1-20.png" alt="" width={140} height={140} className="w-20 md:w-28" />
       </motion.div>
@@ -36,26 +37,26 @@ export function Footer() {
       {/* --- CENTRAL CONTENT --- */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
         
-        {/* LOGO IMAGE (INCREASED SIZE) */}
+        {/* LOGO IMAGE (Huge size maintained) */}
         <Link href="/" className="inline-block mb-6 transition-transform hover:scale-105">
           <Image 
             src="/images/1-30.png" 
             alt="Kehwah Logo"
-            width={500} // Increased for high resolution
+            width={500} 
             height={150}
-            className="h-24 md:h-36 w-auto object-contain" // Significantly larger height
+            className="h-24 md:h-36 w-auto object-contain" 
             priority 
           />
         </Link>
 
-        {/* Subtitle */}
-        <p className="text-[#E87722] text-[11px] md:text-sm font-bold tracking-[0.4em] uppercase mb-8 opacity-90">
+        {/* Subtitle - Using Cream-Gold (#fad7bb) for premium luxury feel */}
+        <p className="text-[#fad7bb] text-[11px] md:text-xs font-bold tracking-[0.4em] uppercase mb-8 opacity-90">
           The Authentic Kashmiri Tea Company
         </p>
 
-        {/* Copyright Bar */}
+        {/* Copyright Bar - Clean white border on burgundy */}
         <div className="pt-6 border-t border-white/10 w-full max-w-[250px] mx-auto">
-          <p className="text-gray-500 text-[9px] md:text-[11px] tracking-widest uppercase font-medium">
+          <p className="text-white/40 text-[9px] md:text-[11px] tracking-widest uppercase font-medium">
             © 2026 Kehwah. Crafted in Kashmir.
           </p>
         </div>
